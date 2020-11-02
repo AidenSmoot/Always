@@ -3,6 +3,10 @@ public class SuperStack<T> {
 	private T[] items;
 	private int top;
 	
+	public SuperStack() {
+		this(1);
+	}
+	
 	public SuperStack (int size) {
 		items =(T[]) new Object[size];
 	}
@@ -29,6 +33,13 @@ public class SuperStack<T> {
 			top = top - 1;
 			return items[top];
 		}
+	}
+	
+	public T peek() {
+		if (isEmpty())
+			return null;
+		else
+			return items[top-1];
 	}
 	
 	public void displayElements() {
